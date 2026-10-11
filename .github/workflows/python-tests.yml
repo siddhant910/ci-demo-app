@@ -23,5 +23,7 @@ jobs:
       - name: Install pytest
         run: pip install pytest
 
-      - name: Run tests
-        run: PYTHONPATH=. python -m pytest
+      -       - name: Run tests
+        run: |
+          export PYTHONPATH="$GITHUB_WORKSPACE"
+          python -m pytest
